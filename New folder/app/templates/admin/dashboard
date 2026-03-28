@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+Admin Dashboard
+Today: Saturday, March 28, 2026
+Total Patients
+{{ total_patients }}
+Total Doctors
+{{ total_doctors }}
+Today's Appointments
+{{ todays_appointments }}
+Revenue (Dummy)
+${{ revenue_summary }}
+Patient Registrations (Monthly)
