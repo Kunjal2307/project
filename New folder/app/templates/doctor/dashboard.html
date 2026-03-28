@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+Welcome, Dr. {{ doctor.user.username }}
+Today's Appointments
+{% for appt in appointments %} {% else %} {% endfor %}
+Time	Patient Name	Symptoms	Status	Action
+{{ appt.appointment_time.strftime('%I:%M %p') }}	{{ appt.patient.first_name }} {{ appt.patient.last_name }}	{{ appt.symptoms[:30] + '...' if appt.symptoms else 'N/A' }}	{{ appt.status.capitalize() }}	{% if appt.status != 'completed' %} Prescribe {% else %} Completed {% endif %}
+No appointments for today.
+Recent Prescriptions
+{% for pres in prescriptions %}
+{{ pres.appointment.patient.first_name }} {{ pres.appointment.patient.last_name }} {{ pres.created_at.strftime('%b %d') }}
+Diag: {{ pres.diagnosis }}
+
+{% else %}
+No recent prescriptions.
+
+{% endfor %}
+{% endblock %}
