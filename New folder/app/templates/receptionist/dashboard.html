@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+Receptionist Dashboard
+Book Walk-in
+Schedule a new appointment quickly
+
+New Patient
+Register a new patient into the system
+
+Today's Appointments View
+{% for appt in appointments %} {% else %} {% endfor %}
+Time	Patient	Doctor	Status	Actions
+{{ appt.appointment_time.strftime('%I:%M %p') }}	{{ appt.patient.first_name }} {{ appt.patient.last_name }}	Dr. {{ appt.doctor.user.username }}	
+{{ appt.status.capitalize() }}
+Completed
+Cancelled
+No Show
+Bill
+No appointments found.
+{% endblock %}
