@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+Back to Appointments
+{{ title }}
+{{ form.hidden_tag() }}
+{{ form.patient_id.label(class="form-label fw-semibold") }} {{ form.patient_id(class="form-select bg-light") }}
+{{ form.doctor_id.label(class="form-label fw-semibold") }} {{ form.doctor_id(class="form-select bg-light") }}
+{{ form.appointment_date.label(class="form-label fw-semibold") }} {{ form.appointment_date(class="form-control bg-light", type="date", id="appt_date") }}
+{{ form.appointment_time.label(class="form-label fw-semibold") }} {{ form.appointment_time(class="form-select bg-light", id="appt_time") }} Select a doctor and date to see available slots.
+{{ form.symptoms.label(class="form-label fw-semibold") }} {{ form.symptoms(class="form-control bg-light", rows="3") }}
+Cancel {{ form.submit(class="btn btn-primary px-4 shadow-sm") }}
+{% endblock %} {% block extra_js %} {% endblock %}
