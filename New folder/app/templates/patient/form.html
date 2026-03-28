@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+Back to Patients
+{{ title }}
+{{ form.hidden_tag() }}
+{{ form.first_name.label(class="form-label fw-semibold") }} {{ form.first_name(class="form-control bg-light") }}
+{{ form.last_name.label(class="form-label fw-semibold") }} {{ form.last_name(class="form-control bg-light") }}
+{{ form.date_of_birth.label(class="form-label fw-semibold") }} {{ form.date_of_birth(class="form-control bg-light") }}
+{{ form.gender.label(class="form-label fw-semibold") }} {{ form.gender(class="form-select bg-light") }}
+{{ form.blood_group.label(class="form-label fw-semibold") }} {{ form.blood_group(class="form-select bg-light") }}
+{{ form.phone.label(class="form-label fw-semibold") }} {{ form.phone(class="form-control bg-light") }}
+{{ form.emergency_contact.label(class="form-label fw-semibold") }} {{ form.emergency_contact(class="form-control bg-light") }}
+{{ form.address.label(class="form-label fw-semibold") }} {{ form.address(class="form-control bg-light", rows="2") }}
+{{ form.medical_history.label(class="form-label fw-semibold") }} {{ form.medical_history(class="form-control bg-light", rows="3") }}
+Cancel {{ form.submit(class="btn btn-primary px-4 shadow-sm") }}
+{% endblock %}
