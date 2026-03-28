@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+Back to Bills
+Generate Bill
+For Appointment on {{ appointment.appointment_date.strftime('%b %d, %Y') }} - {{ appointment.patient.first_name }} {{ appointment.patient.last_name }}
+
+{{ form.hidden_tag() }}
+{{ form.consultation_fee.label(class="form-label fw-semibold") }}
+$ {{ form.consultation_fee(class="form-control bg-light amount-calc", type="number", step="0.01") }}
+{{ form.medicine_cost.label(class="form-label fw-semibold") }}
+$ {{ form.medicine_cost(class="form-control bg-light amount-calc", type="number", step="0.01") }}
+{{ form.other_charges.label(class="form-label fw-semibold") }}
+$ {{ form.other_charges(class="form-control bg-light amount-calc", type="number", step="0.01") }}
+Total Amount: $0.00
+{{ form.payment_method.label(class="form-label fw-semibold") }} {{ form.payment_method(class="form-select bg-light") }}
+{{ form.payment_status.label(class="form-label fw-semibold") }} {{ form.payment_status(class="form-select bg-light") }}
+{{ form.submit(class="btn btn-primary px-4 shadow-sm w-100") }}
+{% endblock %} {% block extra_js %} {% endblock %}
